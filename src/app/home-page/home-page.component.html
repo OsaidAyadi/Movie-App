@@ -1,0 +1,9 @@
+<div class="movie-container">
+  <div class="container">
+    <div class="movie-latest">
+      <div class="movie-list" *ngFor="let item of (popMovies || {}).results">
+        <app-movie-card [movieData]="item"></app-movie-card>
+      </div>
+    </div>
+  </div>
+</div>

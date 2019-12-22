@@ -1,0 +1,66 @@
+.movie-card {
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-filter {
+    width: 100%;
+    height: 100%;
+    // display: none;
+    background-color: rgba(129, 15, 15, 0.322);
+}
+
+.play-video {
+    font-size: 80px;
+    color: #eee;
+    // display: none;
+    text-align: center;
+}
+
+.movie-details {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    z-index: 2;
+    color: white;
+    cursor: pointer;
+    .movie-title {
+        &:hover {
+            color: yellow;
+        }
+    }
+  }
+
+.movie-rate {
+font-size: 25px;
+font-weight: 700;
+
+
+&:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f005";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 700;    
+    color: yellow; 
+}
+}
+
+.vote-bold {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.movie-date {
+    font-size: 25px;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.082);
+}

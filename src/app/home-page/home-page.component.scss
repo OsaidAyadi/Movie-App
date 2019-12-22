@@ -1,0 +1,16 @@
+.movie-container {
+    background-image: url('https://haintheme.com/demo/html/bustter/images/uploads/slider-bg.jpg');
+    background-size: contain;
+}
+
+.movie-latest {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 32px 0;
+}
+
+.movie-list {
+    width: calc(25% - 24px);
+    padding: 12px;
+}
