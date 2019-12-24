@@ -1,0 +1,9 @@
+<div class="movie-video" (click)="closeVideo()" >
+  <div class="video-container">
+      <div class="loader3" *ngIf="showLoader">
+          <span></span>
+          <span></span>
+      </div>
+      <iframe *ngIf="!showLoader" width="1080" height="600" [src]="youtubeLink | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>

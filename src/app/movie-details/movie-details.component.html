@@ -1,0 +1,77 @@
+<div class="moive-page-details">
+  <div class="container">
+    <div class="video-player-section">
+      <div class="video-player">
+        <iframe width="97%" height="520" [src]="youtubeLink | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="video-related">
+        <div *ngFor="let item of movieKey">
+          <iframe width="100%" height="260"
+          [src]="'https://www.youtube.com/embed/'+item.key | safe"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <div class="movie-details-section">
+      <div class="movie-basic-info">
+        <div class="movie-section">
+          <div class="movie-poster"
+          [ngStyle]="{'background-image': 'url(' + imagePath + movieDetails.poster_path + ')'}"
+          ></div>
+          <div class="btn-actions">
+            <div class="watch-trailer">
+              <pre (click)="playMovie()"><span><i class="fas fa-play"></i></span><span class="title">  WATCH TRAILER</span></pre>
+            </div>
+            <div class="buy-ticket">
+              <pre><span><i class="fas fa-credit-card"></i></span><span class="title">  BUY TICKET</span></pre>
+            </div>
+          </div>
+        </div>
+        <div class="movie-about">
+          <h2 class="movie-title">{{movieDetails.original_title}}</h2>
+          <div class="rating">
+            <span *ngFor="let i of [0,1,2,3,4]"><i class="fas fa-star"></i></span>
+          </div>
+          <div class="small-details">
+           <p class="release-date">Release date: {{movieDetails.release_date}}</p>
+           <p class="genres">Genres: <span *ngFor="let item of movieDetails.genres">{{item.name}}, </span></p>
+           <p class="vote_count">Vote count: {{movieDetails.vote_count}}</p>
+           <p class="original_language">Language: {{movieDetails.original_language}}</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="movie-description">
+        <div class="primary-title"><h1>{{movieDetails.original_title}} <span>{{year}}</span></h1></div>
+        <div class="fav-share">
+          <div class="fav">
+            <p><i class="fas fa-heart"></i> ADD TO FAVORITE</p>
+          </div>
+          <div class="share">
+            <p><i class="fas fa-share-alt"></i> SHARE</p>
+          </div>
+        </div>
+        <div class="movie-rating">
+          <div class="number-rate">
+            <span><i class="fas fa-star"></i></span>
+            <div class="rate-review">
+              <p class="rate-item"><span>{{movieDetails.vote_average}}</span>/10</p>
+              <p class="review-item">{{movieDetails.vote_count}} Reviews</p>
+            </div>
+          </div>
+          <div class="design-rate"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-youtube-frame *ngIf="isPlay"
+[youtubeLink]="youtubeLink"
+[isPlay]="isPlay"
+(Close)="closeVideo()"
+>
+</app-youtube-frame>

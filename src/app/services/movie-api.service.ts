@@ -20,7 +20,10 @@ constructor(
     return this.api.getService(`https://api.themoviedb.org/3/movie/popular?api_key=${this.API_KEY}&language=en-US&page=${num}`);
   }
   getType(id) {
-    return this.api.getService(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.API_KEY}&language=en-US`)
+    return this.api.getService(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.API_KEY}&language=en-US`);
+  }
+  getMovie(id) {
+    return this.api.getService(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}`);
   }
 
 }

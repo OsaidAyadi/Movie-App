@@ -1,18 +1,22 @@
-<div class="movie-card" 
+<div
+    class="movie-card" 
     [ngStyle]="{'background-image': 'url(' + imagePath + movieData.poster_path + ')'}"
-    ng-mouseenter="playVideo('show')"
-    ng-mouseleave="playVideo('hide')"> 
-    <div class="card-filter"
-
-    ></div>
+    > 
     <div class="movie-details">
-        <div class="play-video" 
-
-        >
+        <div class="play-video" (click)="playMovie(movieData.id)">
             <span><i class="far fa-play-circle"></i></span>
         </div>
-        <h1 class="movie-title">{{ movieData.title }}</h1>
-        <p class="movie-rate"><span class="vote-bold">{{movieData.vote_average}}</span>/10</p>
-        <p class="movie-date">{{movieData.release_date}}</p>
+        <a class="route-details" routerLink="/movie/{{movieData.id}}">
+            <h1 class="movie-title">{{ movieData.title }}</h1>
+            <p class="movie-rate"><span class="vote-bold">{{movieData.vote_average}}</span>/10</p>
+            <p class="movie-date">{{movieData.release_date}}</p>
+        </a>
     </div>
 </div>
+
+<app-youtube-frame *ngIf="isPlay"
+[youtubeLink]="youtubeLink"
+[isPlay]="isPlay"
+(Close)="closeVideo()"
+>
+</app-youtube-frame>

@@ -1,0 +1,28 @@
+.nav-bar {
+    align-items: center;
+    background-color: rgb(106, 67, 235);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 0 40px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1050;
+    .logo {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(34, 95, 110);
+        border-radius: 100px;
+    };
+    .router-list {
+        display: flex;
+        .item-route {
+            font-size: 25px;
+            padding : 0 0 0 15px;
+            color:white;
+            text-decoration: none;
+        }
+    };
+}

@@ -1,0 +1,173 @@
+.moive-page-details {
+    background-color: #0C0B21;
+    width: 100%;
+}
+
+.container {
+    width:  1115px;
+    padding-top: 100px;
+    }
+
+.video-player-section {
+    display: flex;
+}
+.video-player {
+    width: 75%;
+    
+    iframe {
+        border-radius: 2px;
+    }
+}
+
+.video-related {
+    background: white;
+    display: flex;
+    flex-flow: column;
+    height: 520px;
+    overflow: auto;
+    width: 25%;
+}
+
+.movie-details-section {
+    padding-top: 95px;
+    display: flex;
+}
+
+.movie-basic-info {
+    display: flex;
+    width: 50%;
+}
+
+.movie-section {
+    width: 327px;
+    height: 655px;
+    display: flex;
+    flex-flow: column;
+}
+
+.movie-poster {
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+    height: 509px;
+    width: 327px;
+}
+
+.btn-actions {
+    padding: 18px;
+    border : #0C1C2C 2px solid;
+}
+
+.watch-trailer , .buy-ticket {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    
+    &:hover {
+        transform: rotateX(180deg);
+        transition: transform 0.7s;
+        .title {
+            display: none;
+        }
+    }
+}
+
+.buy-ticket pre , .watch-trailer pre {
+    padding: 17px 37px;
+    border-radius: 9px;
+
+}
+
+.watch-trailer pre {
+    background-color: #DE4140;
+    color: white;
+}
+
+.buy-ticket pre{
+    background-color: #D9ED39;
+    color:#000;
+}
+
+.movie-about {
+    padding: 52px 0 58px 32px;
+    display: flex;
+    flex-flow: column;
+}
+
+.rating {
+    color: white;
+}
+
+.movie-title {
+    color:#F24744;
+}
+
+.small-details {
+    color:white;
+}
+
+.movie-description {
+    margin-left: 50px;
+    width: 50%;
+}
+
+.primary-title {
+    display: flex;
+    color: white;
+    span {
+        color:rgba(214, 214, 214, 0.568);
+        font-size: 25px;
+        font-weight: 400;
+    }
+}
+
+.fav-share {
+    color: #DE4140;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.fa-heart , .fa-share-alt {
+    border-radius: 100px;
+    border: 1px #DE4140 solid;
+    font-size: 12px;
+    margin-right: 5px;
+    padding: 13px;
+}
+
+.movie-rating {
+    display: flex;
+    border: solid #827b75 1px;
+    border-right: none;
+    border-left: none;
+}
+
+.number-rate {
+    display: flex;
+    padding-right: 30px;
+    border-right: 1px solid #827b75;
+    .fa-star {
+        color:yellow;
+        font-size: 25px;
+        padding:11px;
+        line-height: 1.55;
+        }
+    .rate-review p{
+        font-size: 12px;
+    }
+}
+
+.rate-item {
+    color: lightgrey;
+    span {
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+.review-item {
+    color: #3C73AD;
+}
