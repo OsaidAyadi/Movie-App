@@ -1,6 +1,14 @@
 .moive-page-details {
-    background-color: #0C0B21;
+    background-color: #1a1931;
     width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    &::after {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 18, 18, 0.486);
+    }
 }
 
 .container {
@@ -25,7 +33,6 @@
     flex-flow: column;
     height: 520px;
     overflow: auto;
-    width: 25%;
 }
 
 .movie-details-section {
@@ -35,13 +42,14 @@
 
 .movie-basic-info {
     display: flex;
-    width: 50%;
 }
 
 .movie-section {
     width: 327px;
     height: 655px;
     display: flex;
+    position: sticky;
+    top: 120px;
     flex-flow: column;
 }
 
@@ -108,7 +116,7 @@
 
 .movie-description {
     margin-left: 50px;
-    width: 50%;
+    width: 75%;
 }
 
 .primary-title {
@@ -127,6 +135,7 @@
     display: flex;
     font-weight: 500;
     justify-content: space-between;
+    margin-bottom: 37px;
     width: 70%;
 }
 
@@ -139,10 +148,11 @@
 }
 
 .movie-rating {
-    display: flex;
     border: solid #827b75 1px;
-    border-right: none;
     border-left: none;
+    border-right: none;
+    display: flex;
+    margin-bottom: 100px;
 }
 
 .number-rate {
@@ -150,7 +160,7 @@
     padding-right: 30px;
     border-right: 1px solid #827b75;
     .fa-star {
-        color:yellow;
+        color:orange;
         font-size: 25px;
         padding:11px;
         line-height: 1.55;
@@ -170,4 +180,96 @@
 
 .review-item {
     color: #3C73AD;
+}
+
+.design-rate {
+    padding-left: 30px;
+    display: flex;
+    text-align: center;
+    p {
+        color: lightgrey;
+        font-size: 20px;
+        padding-right: 18px;
+    }
+
+    .rating {
+        color:lightgrey;
+        line-height: 4;
+        position: relative;
+    }
+}
+
+.movie-voting {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.movie-stars, .half-star {
+    color: orange;
+}
+
+.movie-routing {
+    display: flex;
+}
+
+.over-view , .video-photo {
+    margin-right: 48px;
+    color: lightgrey;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: solid 3px;
+    display: inline-block;
+
+    &:hover {
+        color:yellow;
+    }
+}
+
+.res-details {
+    color: lightgrey;
+    font-size: 18px;
+}
+
+.money {
+    color: red;
+    font-weight: 700;
+}
+
+.info-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.genres , .production_companies {
+    font-weight: 900;
+}
+
+.test {
+    color: lightgrey;
+}
+
+.custom-scroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+                    left bottom,
+                    left top,
+                    color-stop(0.44, rgb(122,153,217)),
+                    color-stop(0.72, rgb(73,125,189)),
+                    color-stop(0.86, rgb(28,58,148)));
 }

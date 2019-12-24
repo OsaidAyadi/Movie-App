@@ -1,6 +1,7 @@
 .nav-bar {
     align-items: center;
-    background-color: rgb(106, 67, 235);
+    background-color: #071424;
+    box-shadow: 0 5px 5px -4px rgba(167, 165, 165, 0.16);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -11,18 +12,28 @@
     top: 0;
     z-index: 1050;
     .logo {
-        width: 50px;
-        height: 50px;
-        background-color: rgb(34, 95, 110);
+        background-color: #8f87e8;
         border-radius: 100px;
+        height: 50px;
+        width: 50px;
     };
     .router-list {
         display: flex;
         .item-route {
+            color:white;
+            cursor: pointer;
             font-size: 25px;
             padding : 0 0 0 15px;
-            color:white;
             text-decoration: none;
         }
     };
+}
+
+.icon {
+    color: white;
+    font-size: 30px;
+    height: 50px;
+    line-height: 1.6;
+    text-align: center;
+    width: 50px;
 }

@@ -18,7 +18,10 @@ export class MovieDetailsComponent implements OnInit {
   year: string;
   isPlay = false;
   showLoader = false;
-
+  intNum: number;
+  fracNum: number;
+  rate = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  movieRoute = 'overview';
 
   @Output() Play = new EventEmitter<string>();
 
@@ -30,7 +33,7 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.movie.getMovie(this.id).subscribe((data) => {
+    this.movie.getMovie(this.id).subscribe((data: any) => {
       this.movieKey = data.results;
       this.youtubeLink = `https://www.youtube.com/embed/${this.movieKey[0].key}`;
       this.showLoader = false;
@@ -40,6 +43,8 @@ export class MovieDetailsComponent implements OnInit {
       this.movieDetails = data;
       this.year = this.movieDetails.release_date;
       this.year = this.year.slice(0 , 4);
+      this.intNum = parseInt(this.movieDetails.vote_average, 10);
+      this.fracNum = (this.movieDetails.vote_average % 1);
     });
   }
 
@@ -53,5 +58,16 @@ export class MovieDetailsComponent implements OnInit {
     this.isPlay = false;
   }
 
+  counter(i: number) {
+    return new Array(i);
+  }
+
+  formatMoney(num: number) {
+    return '$' + num.toLocaleString('en-US');
+  }
+
+  moiveRouting(e) {
+    this.movieRoute = e;
+  }
 
 }

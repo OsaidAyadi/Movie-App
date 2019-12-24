@@ -1,10 +1,14 @@
-<div class="moive-page-details">
+<div 
+class="moive-page-details"
+[ngStyle]="{'background-image': 'url(' + imagePath + movieDetails.backdrop_path + ')'}"
+>
+  
   <div class="container">
     <div class="video-player-section">
       <div class="video-player">
         <iframe width="97%" height="520" [src]="youtubeLink | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
-      <div class="video-related">
+      <div class="video-related custom-scroll">
         <div *ngFor="let item of movieKey">
           <iframe width="100%" height="260"
           [src]="'https://www.youtube.com/embed/'+item.key | safe"
@@ -30,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="movie-about">
+        <!-- <div class="movie-about">
           <h2 class="movie-title">{{movieDetails.original_title}}</h2>
           <div class="rating">
             <span *ngFor="let i of [0,1,2,3,4]"><i class="fas fa-star"></i></span>
@@ -42,7 +46,7 @@
            <p class="original_language">Language: {{movieDetails.original_language}}</p>
 
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="movie-description">
         <div class="primary-title"><h1>{{movieDetails.original_title}} <span>{{year}}</span></h1></div>
@@ -62,16 +66,72 @@
               <p class="review-item">{{movieDetails.vote_count}} Reviews</p>
             </div>
           </div>
-          <div class="design-rate"></div>
+          <div class="design-rate">
+            <p>Rate This Movie:</p>
+          <div class="rating">
+            <span class="rating-stars" *ngFor="let item of rate">
+            <i class="fas fa-star"></i>
+            </span>
+            <div class="movie-voting">
+              <span class="movie-stars" *ngFor="let item of counter(intNum)">
+                  <i class="fas fa-star"></i>
+              </span>
+              <span class="half-star" *ngIf="fracNum >= 0.5">
+                <i class="fas fa-star-half"></i>
+              </span>
+            </div>
+          </div>
+          </div>
         </div>
+        <div class="movie-routing">
+          <div class="over-view" (click)="moiveRouting('overview')">
+            <p>OVERVIEW</p>
+          </div>
+          <div class="video-photo" (click)="moiveRouting('pic')">
+              <p>VIDEOS & PHOTOS</p>
+          </div>
+        </div>
+        <ng-container *ngIf="movieRoute === 'overview'" >
+          <div class="res-details">
+            <p>{{movieDetails.original_title}}</p>
+            <q>{{movieDetails.overview}}</q>
+            <br/>
+            <p>Movie budget: <span class="money">{{formatMoney(movieDetails.budget)}}</span></p>         
+            <div class="info-list">
+              <div clas="row-one">
+                <p class="genres">Genres: </p>
+                <span *ngFor="let item of movieDetails.genres">
+                  <p class="genre-item">{{item.name}}</p>
+                </span>    
+              </div>
+              <div class="row-two">
+                <p class="production_companies">Production Companies: </p>
+                <span *ngFor="let item of movieDetails.production_companies">
+                  <p class="production-item">{{item.name}}</p>
+                </span>    
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="movieRoute === 'pic'">
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+          <p class="test">Hi Video</p>
+        </ng-container>
       </div>
     </div>
   </div>
 </div>
 
-<app-youtube-frame *ngIf="isPlay"
-[youtubeLink]="youtubeLink"
-[isPlay]="isPlay"
-(Close)="closeVideo()"
->
-</app-youtube-frame>
+<app-youtube-frame
+  *ngIf="isPlay"
+  [youtubeLink]="youtubeLink"
+  [isPlay]="isPlay"
+  (Close)="closeVideo()"
+></app-youtube-frame>
