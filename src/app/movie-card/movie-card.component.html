@@ -1,7 +1,9 @@
-<div
+<div *ngIf="movieData.poster_path"
     class="movie-card" 
-    [ngStyle]="{'background-image': 'url(' + imagePath + movieData.poster_path + ')'}"
+    [ngStyle]=
+    "{'background-image': 'url(' + imagePath + movieData.poster_path + ')'}"
     > 
+    <div class="blur"></div>
     <div class="movie-details">
         <div class="play-video" (click)="playMovie(movieData.id)">
             <span><i class="far fa-play-circle"></i></span>

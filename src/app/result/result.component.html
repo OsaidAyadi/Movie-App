@@ -1,9 +1,11 @@
 <div class="movie-container" *ngIf="result.total_results > 0">
   <div class="container">
     <div class="movie-latest">
-        <div class="movie-list" *ngFor="let item of (result || {}).results">
-          <app-movie-card [movieData]="item"></app-movie-card>
-        </div>
+        <ng-container *ngFor="let item of (result || {}).results">
+          <div class="movie-list" *ngIf="item.poster_path">
+            <app-movie-card  [movieData]="item"></app-movie-card>
+          </div>
+        </ng-container>
     </div>
   </div>
 </div>

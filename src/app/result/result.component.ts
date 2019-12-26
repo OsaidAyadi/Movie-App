@@ -24,6 +24,7 @@ export class ResultComponent {
       this.params = params['query'];
       this.movie.getResult(this.params).subscribe((data) => {
         this.result = data;
+        // console.log(this.result.results[10].poster_path);
       });
   });
 }
