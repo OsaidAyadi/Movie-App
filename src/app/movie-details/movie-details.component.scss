@@ -149,7 +149,6 @@ $primary-color : #1a1931;
 
 .fav-share {
 	color: #DE4140;
-	cursor: pointer;
 	display: flex;
 	font-weight: 500;
 	justify-content: space-between;
@@ -291,6 +290,10 @@ $primary-color : #1a1931;
 .fav-share {
 	width: 100%;
 	flex-flow: column;
+}
+
+.fav, .share {
+	cursor: pointer;
 }
 
 .movie-rating {

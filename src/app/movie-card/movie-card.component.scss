@@ -124,4 +124,37 @@ font-weight: 700;
             height: 300px;
         }
     }
+
+    .movie-card {
+        &:hover {
+            .play-video {
+            display: none;
+             }
+        }
+    }
+
+    .route-details {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        justify-content: flex-end;
+    }
+
+    .route-details {
+
+        h1 {
+            font-size: 25px;
+        }
+        .movie-rate , .movie-date{
+            font-size: 15px;
+        }
+
+        .vote-bold {
+            font-size: 20px;
+        }
+    }
+
+    .movie-details {
+        height: 100%;
+    }
 }

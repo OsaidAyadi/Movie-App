@@ -1,6 +1,6 @@
 <div 
 class="moive-page-details"
-[ngStyle]="{'background-image': 'url(' + imagePath + movieDetails.backdrop_path + ')'}"
+[ngStyle]="{'background-image': 'url(' + imagePath + (movieDetails || {}).backdrop_path + ')'}"
 >
 </div>
 <div class="videos-container">
@@ -27,7 +27,7 @@ class="moive-page-details"
       <div class="movie-basic-info">
         <div class="movie-section">
           <div class="movie-poster"
-          [ngStyle]="{'background-image': 'url(' + imagePath + movieDetails.poster_path + ')'}"
+          [ngStyle]="{'background-image': 'url(' + imagePath + (movieDetails || {}).poster_path + ')'}"
           ></div>
           <div class="btn-actions">
             <div class="watch-trailer">

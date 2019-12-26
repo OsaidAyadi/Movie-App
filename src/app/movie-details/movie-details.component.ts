@@ -11,7 +11,7 @@ import { MovieApiService } from '../services/movie-api.service';
 export class MovieDetailsComponent implements OnInit {
   id: any;
   imagePath = 'https://image.tmdb.org/t/p/original';
-  movieDetails;
+  movieDetails: any = {};
   movieKey: string;
   youtubeLink: string;
   year: string;
@@ -45,6 +45,7 @@ export class MovieDetailsComponent implements OnInit {
       this.intNum = parseInt(this.movieDetails.vote_average, 10);
       this.fracNum = (this.movieDetails.vote_average % 1);
     });
+    document.body.scrollTop = 0;
   }
 
 
@@ -62,7 +63,11 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   formatMoney(num: number) {
-    return '$' + num.toLocaleString('en-US');
+    if (num) {
+    return (num).toLocaleString('en-US') ;
+    } else {
+      return 'Unknown !';
+    }
   }
 
   moiveRouting(e) {

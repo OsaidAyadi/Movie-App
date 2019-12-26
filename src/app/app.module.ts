@@ -48,6 +48,7 @@ const appRoutes: Routes = [
       HttpClientModule,
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes,
+         {scrollPositionRestoration: 'enabled'}
       ),
       FormsModule
    ],
