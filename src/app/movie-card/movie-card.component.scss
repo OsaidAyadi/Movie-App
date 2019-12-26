@@ -1,27 +1,27 @@
 .movie-card {
     background-size: cover;
-    height: 600px;
-    width: 100%;
     border-radius: 5px;
-    position: relative;
     cursor: pointer;
+    height: 600px;
+    position: relative;
+    width: 100%;
 
     &:hover {
         &:before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0.5;
             background: -moz-linear-gradient(269deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* ff3.6+ */
+            background: -ms-linear-gradient(269deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* ie10+ */
+            background: -o-linear-gradient(269deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* opera 11.10+ */
             background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,82,82,1)), color-stop(42%, rgba(151,55,101,1)), color-stop(100%, rgba(8,18,128,1))); /* safari4+,chrome */
             background: -webkit-linear-gradient(269deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* safari5.1+,chrome10+ */
-            background: -o-linear-gradient(269deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* opera 11.10+ */
-            background: -ms-linear-gradient(269deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* ie10+ */
             background: linear-gradient(181deg, rgba(255,82,82,1) 0%, rgba(151,55,101,1) 42%, rgba(8,18,128,1) 100%); /* w3c */
+            content: '';
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF5252', endColorstr='#081280',GradientType=0 ); /* ie6-9 */
+            height: 100%;
+            left: 0;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            width: 100%;
         }
         .play-video {
             display: block;
@@ -37,15 +37,16 @@
 }
 
 .movie-details {
-    position: absolute;
-    width: 100%;
-    text-align: center;
     bottom: 0;
     box-sizing: border-box;
-    transition: 0.5s;
-    z-index: 2;
     color: white;
     cursor: pointer;
+    position: absolute;
+    text-align: center;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 2;
+
     .movie-title {
         &:hover {
             color: yellow;
@@ -62,27 +63,26 @@
 font-size: 25px;
 font-weight: 700;
 
-
 &:before {
-    font-family: "Font Awesome 5 Free";
+    color: yellow; 
     content: "\f005";
     display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;    
     padding-right: 3px;
     vertical-align: middle;
-    font-weight: 700;    
-    color: yellow; 
 }
 }
 
 .vote-bold {
-    font-weight: 900;
     font-size: 30px;
+    font-weight: 900;
 }
 
 .movie-date {
+    background-color: rgba(0, 0, 0, 0.082);
     font-size: 25px;
     font-weight: 700;
-    background-color: rgba(0, 0, 0, 0.082);
 }
 
  @media screen and (max-width: 768px) {
@@ -94,7 +94,7 @@ font-weight: 700;
             display: block;
             font-size: 60px;
             padding-bottom: 20px;
-            }
+        }
     }
     .video-container {
         iframe {

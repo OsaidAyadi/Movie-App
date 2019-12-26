@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import {Observable} from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { MovieApiService } from '../services/movie-api.service';
 
 
@@ -20,7 +19,6 @@ export class MovieDetailsComponent implements OnInit {
   showLoader = false;
   intNum: number;
   fracNum: number;
-  rate = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   movieRoute = 'overview';
 
   @Output() Play = new EventEmitter<string>();
