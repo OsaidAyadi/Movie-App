@@ -1,0 +1,11 @@
+<div class="movie-container" *ngIf="result.total_results > 0">
+  <div class="container">
+    <div class="movie-latest">
+        <div class="movie-list" *ngFor="let item of (result || {}).results">
+          <app-movie-card [movieData]="item"></app-movie-card>
+        </div>
+    </div>
+  </div>
+</div>
+<app-not-found *ngIf="result.total_results === 0"></app-not-found>
+

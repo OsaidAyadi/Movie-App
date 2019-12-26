@@ -1,0 +1,29 @@
+.movie-container {
+    padding-top: 100px;
+    background-image: url('https://haintheme.com/demo/html/bustter/images/uploads/slider-bg.jpg');
+    background-size: contain;
+}
+
+.movie-latest {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 32px 0;
+}
+
+.movie-list {
+    width: calc(25% - 24px);
+    padding: 12px;
+}
+
+@media screen and (max-width: 768px){
+    .movie-list {
+        width: calc(50% - 24px);
+    }
+}
+
+@media screen and (max-width: 465px){
+    .movie-list {
+        width: calc(100% - 24px);
+    }
+}

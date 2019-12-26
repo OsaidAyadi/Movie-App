@@ -2,23 +2,27 @@
 class="moive-page-details"
 [ngStyle]="{'background-image': 'url(' + imagePath + movieDetails.backdrop_path + ')'}"
 >
-  
-  <div class="container">
-    <div class="video-player-section">
-      <div class="video-player">
-        <iframe width="97%" height="520" [src]="youtubeLink | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-      <div class="video-related custom-scroll">
-        <div *ngFor="let item of movieKey">
-          <iframe width="100%" height="260"
-          [src]="'https://www.youtube.com/embed/'+item.key | safe"
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-          </iframe>
-        </div>
+</div>
+<div class="videos-container">
+  <div class="video-player-section">
+    <div class="video-player">
+      <iframe width="97%" height="520" [src]="youtubeLink | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="video-related custom-scroll">
+      <div *ngFor="let item of movieKey">
+        <iframe width="100%" height="260"
+        [src]="'https://www.youtube.com/embed/'+item.key | safe"
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="details-cotanier">
+  <div class="container">
     <div class="movie-details-section">
       <div class="movie-basic-info">
         <div class="movie-section">
@@ -40,10 +44,10 @@ class="moive-page-details"
             <span *ngFor="let i of [0,1,2,3,4]"><i class="fas fa-star"></i></span>
           </div>
           <div class="small-details">
-           <p class="release-date">Release date: {{movieDetails.release_date}}</p>
-           <p class="genres">Genres: <span *ngFor="let item of movieDetails.genres">{{item.name}}, </span></p>
-           <p class="vote_count">Vote count: {{movieDetails.vote_count}}</p>
-           <p class="original_language">Language: {{movieDetails.original_language}}</p>
+            <p class="release-date">Release date: {{movieDetails.release_date}}</p>
+            <p class="genres">Genres: <span *ngFor="let item of movieDetails.genres">{{item.name}}, </span></p>
+            <p class="vote_count">Vote count: {{movieDetails.vote_count}}</p>
+            <p class="original_language">Language: {{movieDetails.original_language}}</p>
 
           </div>
         </div> -->

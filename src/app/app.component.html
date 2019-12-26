@@ -1,11 +1,12 @@
 <header>
     <div class="nav-bar">
         <a routerLink="/" class="logo">
-            <i class="fas fa-video icon"></i>
+            <div class="icon"></div>
         </a>
         <div class="router-list">
-            <a class="item-route"><p>[Osaid Ayadi]</p></a>
+            <app-search-bar></app-search-bar>
         </div>
     </div>
 </header>
 <router-outlet (Play)="playMovie($event)"></router-outlet>
+<app-footer></app-footer>

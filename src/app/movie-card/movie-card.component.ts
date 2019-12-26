@@ -14,6 +14,7 @@ export class MovieCardComponent implements OnInit {
   youtubeLink = 'https://www.youtube.com/embed/g4U4BQW9OEk';
   isPlay = false;
   showLoader = false;
+  result: string[];
   constructor(
     private movie: MovieApiService,
     ) { }
@@ -28,7 +29,9 @@ export class MovieCardComponent implements OnInit {
   playMovie(id: number): void {
     this.isPlay = true;
     this.showLoader = true;
-    this.movie.getMovie(id).subscribe((data) => {
+    console.log('This is an id : ', id);
+
+    this.movie.getMovie(id).subscribe((data: any) => {
       this.movieKey = data.results[0].key;
       this.youtubeLink = `https://www.youtube.com/embed/${this.movieKey}`;
       this.showLoader = false;

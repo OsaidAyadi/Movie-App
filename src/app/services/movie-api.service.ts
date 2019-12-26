@@ -23,7 +23,12 @@ constructor(
     return this.api.getService(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.API_KEY}&language=en-US`);
   }
   getMovie(id) {
-    return this.api.getService(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}`);
+    return this.api.getService(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}`);
+  }
+
+  getResult(key: string) {
+    return this.api.getService
+    (`https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&language=en-US&query=${key}&page=1&include_adult=false`);
   }
 
 }

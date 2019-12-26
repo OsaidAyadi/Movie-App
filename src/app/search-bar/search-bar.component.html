@@ -1,0 +1,11 @@
+<div class="search-bar">
+  
+  <input type="text" class="input" placeholder="&nbsp;" [(ngModel)]='keyWord' (keyup.enter)="goSearch()">
+  <span class="label">Search movies...</span>
+  <span class="highlight"></span>
+  <div class="search-btn">
+        <span (click)="goSearch()">
+          <i class="fas fa-search"></i>
+        </span>
+   </div>
+</div>

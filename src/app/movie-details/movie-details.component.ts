@@ -35,6 +35,7 @@ export class MovieDetailsComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.movie.getMovie(this.id).subscribe((data: any) => {
       this.movieKey = data.results;
+      // @ts-ignore
       this.youtubeLink = `https://www.youtube.com/embed/${this.movieKey[0].key}`;
       this.showLoader = false;
     });
